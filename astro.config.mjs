@@ -35,7 +35,7 @@ const viteConfig = {
 
 export default defineConfig({
   compressHTML: true,
-  site: 'https://intern-ws.github.io/Template/',
+  site: 'https://intern-ws.github.io/',
   output: 'static',
   integrations: [compress(), icon(), sitemap()],
   vite: viteConfig,
