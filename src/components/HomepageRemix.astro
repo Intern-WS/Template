@@ -1,0 +1,68 @@
+---
+import ContactForm from '@components/ContactForm.astro'
+import { Heading, Link } from 'accessible-astro-components'
+
+interface Props {
+  variant: 'editorial' | 'guided' | 'midnight'
+}
+
+const { variant } = Astro.props
+---
+
+<div class:list={['home-remix', `home-remix--${variant}`]}>
+  <section class="remix-hero">
+    <div class="container remix-hero__grid">
+      <div class="remix-hero__copy space-content">
+        <p class="remix-kicker">Social Security disability help in Illinois</p>
+        <Heading level="h1">Clear help with SSI and SSDI</Heading>
+        <p class="remix-lede">Williams &amp; Swee, Ltd. helps people apply for disability benefits and appeal denied claims.</p>
+        <div class="remix-actions">
+          <Link href="tel:+10000000000" isButton type="primary">Call Williams &amp; Swee</Link>
+          <Link href="/disability-appeals" isButton type="secondary">My claim was denied</Link>
+        </div>
+        <p class="small">Demo phone number: (000) 000-0000</p>
+      </div>
+      <aside class="remix-assurance space-content" aria-labelledby={`${variant}-start-title`}>
+        <p class="remix-assurance__label">A simple place to start</p>
+        <Heading level="h2" size="h3" id={`${variant}-start-title`}>You can start with one call</Heading>
+        <p>You do not need to understand every Social Security rule first.</p>
+        <p><strong>Tell us what happened. We will listen and explain possible next steps.</strong></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="remix-process" aria-labelledby={`${variant}-next-heading`}>
+    <div class="container">
+      <Heading level="h2" size="h3" id={`${variant}-next-heading`}>What happens next</Heading>
+      <ol class="remix-process__list">
+        <li><span>1</span><strong>Call or message us</strong></li>
+        <li><span>2</span><strong>Tell us what happened</strong></li>
+        <li><span>3</span><strong>Learn a possible next step</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="remix-help" aria-labelledby={`${variant}-help-heading`}>
+    <div class="container">
+      <div class="remix-section-heading space-content">
+        <p class="remix-kicker">Choose what sounds like you</p>
+        <Heading level="h2" id={`${variant}-help-heading`}>How can we help?</Heading>
+      </div>
+      <div class="remix-choices">
+        <article class="remix-choice space-content"><span class="remix-choice__number" aria-hidden="true">01</span><Heading level="h3" size="h4">I need to apply</Heading><p>Learn about SSI and SSDI and what information may help your application.</p><Link href="/how-we-help">Help with an application</Link></article>
+        <article class="remix-choice space-content"><span class="remix-choice__number" aria-hidden="true">02</span><Heading level="h3" size="h4">My claim was denied</Heading><p>A denial is not always the end. You may be able to ask Social Security to review the decision.</p><Link href="/disability-appeals">Learn about appeals</Link></article>
+        <article class="remix-choice space-content"><span class="remix-choice__number" aria-hidden="true">03</span><Heading level="h3" size="h4">I have a hearing</Heading><p>Learn how an attorney may help you prepare for a disability hearing.</p><Link href="/how-we-help">Help before a hearing</Link></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="remix-programs" aria-labelledby={`${variant}-compare-heading`}>
+    <div class="container remix-programs__grid">
+      <div class="remix-programs__intro space-content"><p class="remix-kicker">Two disability programs</p><Heading level="h2" id={`${variant}-compare-heading`}>SSI and SSDI are different</Heading><p><strong>Both programs use Social Security’s disability rules.</strong> The rules can be complicated. We can help you understand which program may apply.</p></div>
+      <div class="remix-program space-content"><Heading level="h3">SSDI</Heading><p>Social Security Disability Insurance is usually based on your work history.</p><Link href="/ssdi">Learn about SSDI</Link></div>
+      <div class="remix-program space-content"><Heading level="h3">SSI</Heading><p>Supplemental Security Income is usually based on limited income and resources.</p><Link href="/ssi">Learn about SSI</Link></div>
+    </div>
+  </section>
+
+  <div class="container remix-contact"><ContactForm /></div>
+</div>
