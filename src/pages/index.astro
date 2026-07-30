@@ -1,0 +1,65 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import ContactForm from '@components/ContactForm.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+
+<DefaultLayout title="Illinois SSI and SSDI Lawyers | Williams & Swee, Ltd." useTitleTemplate={false} description="Clear, plain-language help for Illinois SSI and SSDI applications, denied claims, hearings, and appeals from Williams & Swee, Ltd.">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="space-content">
+        <p class="eyebrow">Social Security disability help in Illinois</p>
+        <Heading level="h1">Clear help with SSI and SSDI</Heading>
+        <p class="hero-lede">Williams &amp; Swee, Ltd. helps people apply for disability benefits and appeal denied claims.</p>
+        <div class="button-row">
+          <Link href="tel:+10000000000" isButton type="primary">Call Williams &amp; Swee</Link>
+          <Link href="/disability-appeals" isButton type="secondary">My claim was denied</Link>
+        </div>
+        <p class="small">Demo phone number: (000) 000-0000</p>
+      </div>
+      <aside class="call-card" aria-labelledby="start-title">
+        <Heading level="h2" size="h3" id="start-title">You can start with one call</Heading>
+        <p>You do not need to understand every Social Security rule first.</p>
+        <p><strong>Tell us what happened. We will listen and explain possible next steps.</strong></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="next-steps" aria-labelledby="next-heading">
+    <div class="step-panel">
+      <Heading level="h2" size="h3" id="next-heading">What happens next</Heading>
+      <div class="step-grid">
+        <div class="step"><span class="step-num">1</span><strong>Call or message us</strong></div>
+        <div class="step"><span class="step-num">2</span><strong>Tell us what happened</strong></div>
+        <div class="step"><span class="step-num">3</span><strong>Learn a possible next step</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="help-heading">
+    <div class="container space-content">
+      <p class="eyebrow">Choose what sounds like you</p>
+      <Heading level="h2" id="help-heading">How can we help?</Heading>
+      <div class="card-grid">
+        <article class="choice-card space-content"><Heading level="h3" size="h4">I need to apply</Heading><p>Learn about SSI and SSDI and what information may help your application.</p><Link href="/how-we-help">Help with an application</Link></article>
+        <article class="choice-card space-content"><Heading level="h3" size="h4">My claim was denied</Heading><p>A denial is not always the end. You may be able to ask Social Security to review the decision.</p><Link href="/disability-appeals">Learn about appeals</Link></article>
+        <article class="choice-card space-content"><Heading level="h3" size="h4">I have a hearing</Heading><p>Learn how an attorney may help you prepare for a disability hearing.</p><Link href="/how-we-help">Help before a hearing</Link></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="compare-heading">
+    <div class="container space-content">
+      <p class="eyebrow">Two disability programs</p>
+      <Heading level="h2" id="compare-heading">SSI and SSDI are different</Heading>
+      <div class="comparison">
+        <div class="space-content"><Heading level="h3">SSDI</Heading><p>Social Security Disability Insurance is usually based on your work history.</p><Link href="/ssdi">Learn about SSDI</Link></div>
+        <div class="space-content"><Heading level="h3">SSI</Heading><p>Supplemental Security Income is usually based on limited income and resources.</p><Link href="/ssi">Learn about SSI</Link></div>
+      </div>
+      <p><strong>Both programs use Social Security’s disability rules.</strong> The rules can be complicated. We can help you understand which program may apply.</p>
+    </div>
+  </section>
+
+  <div class="container section"><ContactForm /></div>
+</DefaultLayout>
+
